@@ -1,0 +1,6 @@
+The First complex number is: 9+12i
+The Second complex number is: -51+3i
+The Sum of the two is: -42+15i
+The Difference of the two is: 60+9i
+The Product of the two is: -468-585i
+The Conjugate of the first one is: 9-12i

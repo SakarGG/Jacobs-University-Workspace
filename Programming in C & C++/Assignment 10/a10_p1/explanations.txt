@@ -1,0 +1,65 @@
+/*
+CH-230-A
+a10 p10.1[txt]
+Sakar Gopal Gurubacharya
+s.gurubacharya@jacobs-university.de
+*/
+
+
+p10.1 (a)
+Commenting out using namespace std;
+
+1st Error: "use of undeclared identifier" 
+Using namespace prevents conflicts of having same named variables, 
+functions etc. using namespace std means we are using std, which 
+means standard. The functions inside standard is already defined 
+inside iostream - standard library. So we can call the functions 
+inside std which includes: cin, cout and all the similar errors 
+thrown when that line is commented out. The compiler cannot identify 
+cin, cout and other standard functions even if we included 
+iostream because these are in the scope of std and the compiler 
+doesn't know where to check without namespace.
+
+
+2nd Error: "did you mean std::cin"
+The error keeps reminding the program that whenever it encounters 
+one of the functions of iostream like cin, it throws an error saying, 
+"did you mean std::cin". The compiler is smart enough to know where to 
+look for this function but since it is commented out, i.e. not it scope, 
+it cannot process it. Writing in that format is preferred instead of 
+"using namespace std" as calling the whole thing defeats its purpose
+of what it was designed to prevent.
+
+
+3rd Error: File directory iostream
+It shows a file directory for each error generated, showing where the 
+"unknown" functions are defined. It is indeed defined in iostream but 
+without the scope being present in the program itself. iostream has 
+to always be accompanied by using namespace std or atleast write in 
+the form as presented in the 2nd Error.
+
+
+
+p10.1 (b)
+Removing Critter:: prefix from one of the methods.
+
+1st and only Error: use of undeclared identifier 'name'
+Commenting out Critter:: from the first method...
+It throws undeclared identifier error.
+
+According to Slide 21 of Lecture 10:
+"
+When defining a method, specify the name of the class it
+belongs to:
+
+void Critter::setName(string name) { ... }
+
+There can be more methods called setName in different classes,
+so it is necessary to specify which one it is being defined
+"
+
+Basically it means it is necessary to write the name of the method
+as it will remove any confusion to the compiler of which to process
+if the same methods are defined in different classes. If a function is
+defined within a class, without Critter:: preﬁx, the compiler is unsure 
+where to look for it and therefore an error is generated. 
